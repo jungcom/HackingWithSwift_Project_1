@@ -11,6 +11,8 @@ import UIKit
 class DetailViewController: UIViewController {
     @IBOutlet var imageView: UIImageView!
     var selectedImage: String?
+    var maxNumber: Int!
+    var currentIndex: Int!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,7 +22,7 @@ class DetailViewController: UIViewController {
             imageView.image = UIImage(named: selectedImage)
         }
         
-        navigationItem.title = selectedImage
+        navigationItem.title = "Picture \(currentIndex!) of \(maxNumber!)"
         navigationItem.largeTitleDisplayMode = .never
     }
     
@@ -34,16 +36,4 @@ class DetailViewController: UIViewController {
         super.viewWillDisappear(animated)
         navigationController?.hidesBarsOnTap = false
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
