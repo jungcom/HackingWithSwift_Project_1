@@ -27,6 +27,11 @@ class ViewController: UITableViewController {
                 pictures.append(item)
             }
         }
+        
+        //Sort an array of strings
+        pictures.sort { (s1, s2) -> Bool in
+            return s1<s2
+        }
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
